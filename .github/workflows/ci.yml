@@ -1,5 +1,6 @@
-name: CI/CD — Build, Test & Docker Publish
+# Pipeline CI/CD: compila, prueba y publica imagen en Docker Hub automáticamente en cada push a main
 
+name: CI/CD — Build, Test & Docker Publish
 on:
   push:
     branches: [main]
