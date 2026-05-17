@@ -6,6 +6,42 @@ API REST de productos construida con Spring Boot, contenedorizada con Docker
 mediante un Dockerfile multi-stage, con pipeline CI/CD automatizado con GitHub Actions
 y publicada en Docker Hub.
 
+## Tecnologías utilizadas
+
+- Java 21
+- Spring Boot 3.4
+- Spring Data JPA
+- PostgreSQL 16
+- Docker (multi-stage build)
+- Docker Compose
+- GitHub Actions (CI/CD)
+- Docker Hub
+- Railway (plataforma de despliegue)
+- Maven
+- JaCoCo (cobertura de pruebas)
+
+## Estructura del proyecto
+
+```
+productos-api/
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── src/
+│   └── main/
+│       ├── java/com/universidad/productosapi/
+│       │   ├── controller/ProductoController.java
+│       │   ├── model/Producto.java
+│       │   └── repository/ProductoRepository.java
+│       └── resources/
+│           ├── application.properties
+│           └── application-prod.properties
+├── Dockerfile
+├── docker-compose.yml
+├── .dockerignore
+└── pom.xml
+```
+
 ## URL de la aplicación en Railway
 https://farfan-post1-u12-production.up.railway.app
 
@@ -115,28 +151,6 @@ docker run -p 8080:8080 \
   alejaf13/productos-api:latest
 ```
 
-## Estructura del proyecto
-
-```
-productos-api/
-├── .github/
-│   └── workflows/
-│       └── ci.yml
-├── src/
-│   └── main/
-│       ├── java/com/universidad/productosapi/
-│       │   ├── controller/ProductoController.java
-│       │   ├── model/Producto.java
-│       │   └── repository/ProductoRepository.java
-│       └── resources/
-│           ├── application.properties
-│           └── application-prod.properties
-├── Dockerfile
-├── docker-compose.yml
-├── .dockerignore
-└── pom.xml
-```
-
 ## Dockerfile multi-stage
 
 El Dockerfile usa dos etapas:
@@ -145,16 +159,13 @@ El Dockerfile usa dos etapas:
 
 Esto reduce el tamaño de la imagen final y elimina herramientas de desarrollo innecesarias en producción.
 
-## Tecnologías utilizadas
-
-- Java 21
-- Spring Boot 3.4
-- Spring Data JPA
-- PostgreSQL 16
-- Docker (multi-stage build)
-- Docker Compose
-- GitHub Actions (CI/CD)
-- Docker Hub
-- Railway (plataforma de despliegue)
-- Maven
-- JaCoCo (cobertura de pruebas)
+## Figura 1. Historial de ejecuciones en GitHub Actions — pipeline verde
+[]![CI/CD Status](capturas/ci_status.png)
+## Figura 2. Artefacto jacoco-report disponible para descarga  
+[]![JaCoCo Report](capturas/jacoco_report.png)
+## Figura 3. Imagen alejaf13/productos-api publicada en Docker Hub
+[]![Docker Hub](capturas/docker_hub.png)
+## Figura 4. Tags de la imagen en Docker Hub — latest y sha-xxxxxxx
+[]![Docker Tags](capturas/docker_tags.png)
+## Figura 5. Página principal del repositorio con badge CI/CD verde
+[]![Repo Badge](capturas/repo_badge.png)
