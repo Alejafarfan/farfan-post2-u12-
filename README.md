@@ -17,6 +17,25 @@ https://farfan-post1-u12-production.up.railway.app
 - Railway (plataforma de despliegue)
 - Maven
 
+## Estructura del proyecto
+
+```
+productos-api/
+├── src/
+│   └── main/
+│       ├── java/com/universidad/productosapi/
+│       │   ├── controller/ProductoController.java
+│       │   ├── model/Producto.java
+│       │   └── repository/ProductoRepository.java
+│       └── resources/
+│           ├── application.properties
+│           └── application-prod.properties
+├── Dockerfile
+├── docker-compose.yml
+├── .dockerignore
+└── pom.xml
+```
+
 ## Endpoints disponibles
 
 | Método | Endpoint               | Descripción                  |
@@ -89,26 +108,7 @@ docker compose down
 docker compose down -v
 ```
 
-## 🏗️ Estructura del proyecto
-
-```
-productos-api/
-├── src/
-│   └── main/
-│       ├── java/com/universidad/productosapi/
-│       │   ├── controller/ProductoController.java
-│       │   ├── model/Producto.java
-│       │   └── repository/ProductoRepository.java
-│       └── resources/
-│           ├── application.properties
-│           └── application-prod.properties
-├── Dockerfile
-├── docker-compose.yml
-├── .dockerignore
-└── pom.xml
-```
-
-## 🔧 Configuración de perfiles
+## Configuración de perfiles
 
 ### Perfil por defecto (desarrollo local con Docker)
 Archivo: `src/main/resources/application.properties`
